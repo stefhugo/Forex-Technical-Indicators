@@ -1,27 +1,79 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Analysis Widget</title>
-</head>
-<body>
-    <script type="text/javascript">
-        DukascopyApplet = {
-            "type": "technical_analysis",
-            "params": {
-                "showHeader": true,
-                "tableBorderColor": "#D92626",
-                "availableInstruments": "l:",
-                "instrument": "EUR/USD",
-                "period": ["6", "8", "10", "11", "13", "16", "17", "18"],
-                "width": "100%",
-                "height": "800px", <!-- You can adjust this height value if necessary -->
-                "adv": "popup",
-                "lang": "en"
-            }
-        };
-    </script>
-    <script type="text/javascript" src="https://freeserv-static.dukascopy.com/2.0/core.js"></script>
-</body>
-</html>
+<title>Technical Analysis</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="https://freeserv-static.dukascopy.com/2.0/v/0.42.76/techan/techan.css" />
+<script nonce="6946ad77e15d07f8c6b118d4">
+	window.dc = window.dc || {};
+	window.dc.i18n = window.dc.i18n || {};
+	window.dc.i18n.NS = 'technical_analysis';
+</script>
+<script nonce="6946ad77e15d07f8c6b118d4" src="https://freeserv.dukascopy.com/2.0/index.php?path=common/translation&lang=en"></script>
+<script nonce="6946ad77e15d07f8c6b118d4" src="https://freeserv-static.dukascopy.com/2.0/v/0.42.76/techan/techan.js"></script>
+<script nonce="6946ad77e15d07f8c6b118d4">
+window.onload = function() {
+	var techan = new dc.techan.TechnicalAnalysis({
+		chartUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=chart/popup',
+		defaultLogoLinkUri: '/2.0/index.php?path=common/logoLink',
+		dataUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=chart/json',
+		instrumentUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=common/instruments'
+	});
+	techan.getSettings().parseQueryString(window.location.search.replace(/\?/, ''));
+	techan.render();
+};
+</script>
+<!-- Google Tag Manager -->
+<script nonce="6946ad77e15d07f8c6b118d4">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.nonce='6946ad77e15d07f8c6b118d4';j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N5PT8M7');
+
+window.addEventListener('load', function() {
+	var container = document.createDocumentFragment(),
+		bodyElement = document.body,
+		noscriptElm = document.createElement('noscript'),
+		iframeElm = document.createElement('iframe');
+	
+	noscriptElm.appendChild(iframeElm);
+	
+	container.appendChild(document.createComment('Google Tag Manager (noscript)'));
+	container.appendChild(noscriptElm);
+	container.appendChild(document.createComment('End Google Tag Manager (noscript)'));
+	
+	bodyElement.insertBefore(container, bodyElement.firstChild);
+	
+	iframeElm.src = 'https://www.googletagmanager.com/ns.html?id=GTM-N5PT8M7';
+	iframeElm.height = 0;
+	iframeElm.width = 0;
+	iframeElm.style = 'display:none;visibility:hidden';
+});
+
+</script>
+<!-- End Google Tag Manager --><!--LiveInternet counter--><script nonce="6946ad77e15d07f8c6b118d4" type="text/javascript"><!--
+    var img = new Image(),
+        url = "//counter.yadro.ru/hit?t26.6;r"+
+            escape(document.referrer)+
+            ((typeof(screen)=="undefined")?"":
+            ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+            screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+            ";"+Math.random(),
+        container = document.createElement('a');
+
+    container.href = '//www.liveinternet.ru/click';
+    container.target = '_blank';
+
+    img.onload = function () {
+        document.body.appendChild(container);
+        container.appendChild(img);
+    };
+
+    window.addEventListener('load', function() {
+        img.src = url;
+        img.style.display = 'none';
+        img.border = '0';
+        img.width = '1';
+        img.height = '1';
+    });
+//--></script><!--/LiveInternet-->
